@@ -1,5 +1,5 @@
 name: Hello World-build-Push
-on: workflow_dispatch
+on: push
 jobs:
    build1:
      runs-on: ubuntu-latest
