@@ -1,0 +1,20 @@
+name: Hello World-needs
+on: workflow_dispatch
+jobs:
+   build1:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Build1 Step
+         run: echo "A demo1  build"
+   build2:
+      runs-on: ubuntu-latest
+      needs: build1
+      steps:
+        - name: Build2 Step
+          run: echo "A demo2 build"
+   Deploy:
+     runs-on: ubuntu-latest
+     needs: build2
+     steps:
+       - name: Deploy the App
+         run: echo "Deploying the app"
